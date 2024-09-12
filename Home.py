@@ -11,7 +11,8 @@ from google.cloud import storage
 
 icon_path = "ML.png"
 padding = 20
-json_filepath = "ml-take-home-assessment-firebase-adminsdk-uu6gi-f084bbab03.json"
+
+firebase_cred = st.secrets["FIREBASE_AUTH"]
 
 st.set_page_config(page_title="Risk Analyser", page_icon = icon_path)
 
@@ -19,7 +20,7 @@ if not firebase_admin._apps:
     cred = credentials.Certificate(json_filepath)
     firebase_admin.initialize_app(cred, {'storageBucket': 'ml-take-home-assessment.appspot.com'})
 
-credentials = service_account.Credentials.from_service_account_file(json_filepath)
+credentials = service_account.Credentials.from_service_account_file(firebase_cred)
 
 files = [
     'MoneyLionRiskAnalyzer.pkl',
