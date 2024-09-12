@@ -12,7 +12,7 @@ from google.cloud import storage
 icon_path = "ML.png"
 padding = 20
 
-firebase_cred = st.secrets["FIREBASE_AUTH"][cred]
+firebase_cred = st.secrets["FIREBASE_AUTH"]['cred']
 
 st.set_page_config(page_title="Risk Analyser", page_icon = icon_path)
 
