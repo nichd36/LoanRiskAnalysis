@@ -15,14 +15,16 @@ st.set_page_config(page_title="Risk Analyser", page_icon = icon_path)
 
 firebase_cred = st.secrets["FIREBASE_AUTH"]['cred']
 firebase_cred = firebase_cred.to_dict()
+
+json_string = json.dumps(firebase_cred)
 print(type(firebase_cred))
-st.write(type(firebase_cred))
+st.write(type(json_string))
 
 if not firebase_admin._apps:
-    cred = credentials.Certificate(firebase_cred)
+    cred = credentials.Certificate(json_string)
     firebase_admin.initialize_app(cred, {'storageBucket': 'ml-take-home-assessment.appspot.com'})
 
-credentials = service_account.Credentials.from_service_account_file(firebase_cred)
+credentials = service_account.Credentials.from_service_account_file(json_string)
 
 files = [
     'MoneyLionRiskAnalyzer.pkl',
