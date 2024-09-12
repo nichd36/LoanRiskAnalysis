@@ -4,7 +4,6 @@ import numpy as np
 import joblib
 import firebase_admin
 import sys
-import json
 
 from firebase_admin import credentials, storage
 from google.oauth2 import service_account
@@ -14,7 +13,6 @@ icon_path = "ML.png"
 padding = 20
 
 firebase_cred = st.secrets["FIREBASE_AUTH"]['cred']
-firebase_cred = json.loads(firebase_cred)
 
 st.set_page_config(page_title="Risk Analyser", page_icon = icon_path)
 
