@@ -17,7 +17,7 @@ firebase_cred = st.secrets["FIREBASE_AUTH"]
 st.set_page_config(page_title="Risk Analyser", page_icon = icon_path)
 
 if not firebase_admin._apps:
-    cred = credentials.Certificate(json_filepath)
+    cred = credentials.Certificate(firebase_cred)
     firebase_admin.initialize_app(cred, {'storageBucket': 'ml-take-home-assessment.appspot.com'})
 
 credentials = service_account.Credentials.from_service_account_file(firebase_cred)
