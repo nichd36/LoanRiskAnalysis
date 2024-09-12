@@ -14,6 +14,7 @@ padding = 20
 st.set_page_config(page_title="Risk Analyser", page_icon = icon_path)
 
 firebase_cred = st.secrets["FIREBASE_AUTH"]['cred']
+firebase_cred = firebase_cred.to_dict()
 print(type(firebase_cred))
 st.write(type(firebase_cred))
 
