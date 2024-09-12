@@ -10,8 +10,7 @@ from google.oauth2 import service_account
 from google.cloud import storage
 
 icon_path = "ML.png"
-
-firebase_cred = st.secrets["FIREBASE_AUTH"]['cred']
+firebase_cred = "ml-take-home-assessment-firebase-adminsdk-uu6gi-f084bbab03.json"
 
 st.set_page_config(page_title="Risk Analyser", page_icon = icon_path)
 
