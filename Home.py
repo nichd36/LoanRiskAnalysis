@@ -47,7 +47,6 @@ def predict(features):
     
     features_df = features_df.values
     prediction = model.predict(features_df)
-    st.write(prediction)
 
     prediction_decode = (prediction > 0.5).astype(int) # Round up the result to either 0 or 1
 
