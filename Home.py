@@ -51,11 +51,15 @@ def predict(features):
     prediction = model.predict(features_df)
     st.write(prediction)
 
-    prediction = (prediction > 0.5).astype(int)
-    prediction_decode = te.inverse_transform(prediction)
-    st.write(prediction)
-    st.write(prediction_decode)
-    st.write(te)
+    prediction_decode = (prediction > 0.5).astype(int)
+    prediction_decode = te.inverse_transform(prediction_decode)
+
+    if (prediction_decode = 0):
+        st.warning("This loan might be risky, kindly review more.")
+        st.warning(f"This loan is {prediction*100} % safe, proceed with warning", icon="⚠️")
+    else:
+        st.success("Good news, this loan is generally safe")
+        st.success(f"This loan is {prediction*100} % safe", icon="✅")
 
 st.markdown("\n\nKindly fill in the loan applicant's data\n")
 
