@@ -52,14 +52,15 @@ def predict(features):
     st.write(prediction)
 
     prediction_decode = (prediction > 0.5).astype(int)
-    prediction_decode = te.inverse_transform(prediction_decode)
+    # prediction_decode = te.inverse_transform(prediction_decode)
 
     if (prediction_decode == 0):
         st.warning("This loan might be risky, kindly review more.")
-        st.warning(f"This loan is {prediction*100} % safe, proceed with warning", icon="⚠️")
+        st.warning(f"This loan is {(prediction*100)} % safe, proceed with warning", icon="⚠️")
     else:
         st.success("Good news, this loan is generally safe")
-        st.success(f"This loan is {prediction*100} % safe", icon="✅")
+        st.success(f"This loan is {(prediction*100)} % safe", icon="✅")
+    st.markdown("Higher score equals to less risk")
 
 st.markdown("\n\nKindly fill in the loan applicant's data\n")
 
