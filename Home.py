@@ -4,21 +4,34 @@ import numpy as np
 import joblib
 import firebase_admin
 import sys
+import json
 
 from firebase_admin import credentials, storage
 from google.oauth2 import service_account
 from google.cloud import storage
 
 icon_path = "ML.png"
-firebase_cred = "ml-take-home-assessment-644f6706de7d.json"
-
 st.set_page_config(page_title="Risk Analyser", page_icon = icon_path)
 
+service_account_key = {
+    "type": st.secrets.type,
+    "project_id": st.secrets.project_id,
+    "private_key_id": st.secrets.private_key_id,
+    "private_key": st.secrets.private_key,
+    "client_email": st.secrets.client_email,
+    "client_id": st.secrets.client_id,
+    "auth_uri": st.secrets.auth_uri,
+    "token_uri": st.secrets.token_uri,
+    "auth_provider_x509_cert_url": st.secrets.auth_provider_x509_cert_url,
+    "client_x509_cert_url": st.secrets.client_x509_cert_url,
+}
+
+cred = credentials.Certificate(service_account_key)
+
 if not firebase_admin._apps: # if firebase initialized already, skip this
-    cred = credentials.Certificate(firebase_cred)
     firebase_admin.initialize_app(cred, {'storageBucket': 'ml-take-home-assessment.appspot.com'})
 
-credentials = service_account.Credentials.from_service_account_file(firebase_cred)
+credentials = service_account.Credentials.from_service_account_info(service_account_key)
 
 files = [
     'MoneyLionRiskAnalyzer.pkl',
