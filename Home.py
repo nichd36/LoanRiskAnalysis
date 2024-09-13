@@ -14,10 +14,9 @@ firebase_cred = "ml-take-home-assessment-644f6706de7d.json"
 
 st.set_page_config(page_title="Risk Analyser", page_icon = icon_path)
 
-if not firebase_admin._apps:
+if not firebase_admin._apps: # if firebase initialized already, skip this
     cred = credentials.Certificate(firebase_cred)
     firebase_admin.initialize_app(cred, {'storageBucket': 'ml-take-home-assessment.appspot.com'})
-# bucket = storage.bucket()
 
 credentials = service_account.Credentials.from_service_account_file(firebase_cred)
 
@@ -32,7 +31,6 @@ for file_name in files:
 
 st.image(icon_path, width=70)
 st.title('MoneyLion Take Home Assessment - Loan Risk Predictor')
-
 
 def predict(features):
     model = joblib.load('MoneyLionRiskAnalyzer.pkl')
@@ -51,15 +49,16 @@ def predict(features):
     prediction = model.predict(features_df)
     st.write(prediction)
 
-    prediction_decode = (prediction > 0.5).astype(int)
-    # prediction_decode = te.inverse_transform(prediction_decode)
+    prediction_decode = (prediction > 0.5).astype(int) # Round up the result to either 0 or 1
+
+    # prediction_decode = te.inverse_transform(prediction_decode) #Commented as we are using our custom decoder with custom messages
 
     if (prediction_decode == 0):
         st.warning("This loan might be risky, kindly review more.")
-        st.warning(f"This loan is {(prediction*100)} % safe, proceed with warning", icon="⚠️")
+        st.warning(f"This loan is {prediction*100:.2f} % safe, proceed with warning", icon="⚠️")
     else:
         st.success("Good news, this loan is generally safe")
-        st.success(f"This loan is {(prediction*100)} % safe", icon="✅")
+        st.success(f"This loan is {prediction*100:.2f} % safe", icon="✅")
     st.markdown("Higher score equals to less risk")
 
 st.markdown("\n\nKindly fill in the loan applicant's data\n")
