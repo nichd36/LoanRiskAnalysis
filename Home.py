@@ -54,7 +54,7 @@ def predict(features):
     prediction_decode = (prediction > 0.5).astype(int)
     prediction_decode = te.inverse_transform(prediction_decode)
 
-    if (prediction_decode = 0):
+    if (prediction_decode == 0):
         st.warning("This loan might be risky, kindly review more.")
         st.warning(f"This loan is {prediction*100} % safe, proceed with warning", icon="⚠️")
     else:
