@@ -10,13 +10,14 @@ from google.oauth2 import service_account
 from google.cloud import storage
 
 icon_path = "ML.png"
-firebase_cred = "ml-take-home-assessment-firebase-adminsdk-uu6gi-15c71dfca3.json"
+firebase_cred = "ml-take-home-assessment-644f6706de7d.json"
 
 st.set_page_config(page_title="Risk Analyser", page_icon = icon_path)
 
 if not firebase_admin._apps:
     cred = credentials.Certificate(firebase_cred)
     firebase_admin.initialize_app(cred, {'storageBucket': 'ml-take-home-assessment.appspot.com'})
+# bucket = storage.bucket()
 
 credentials = service_account.Credentials.from_service_account_file(firebase_cred)
 
@@ -25,13 +26,12 @@ files = [
     'label_encoders.pkl',
     'target_encoder.pkl'
 ]
+
 for file_name in files:
     storage.Client(credentials=credentials).bucket(firebase_admin.storage.bucket().name).blob(file_name).download_to_filename(file_name)
 
 st.image(icon_path, width=70)
 st.title('MoneyLion Take Home Assessment - Loan Risk Predictor')
-st.markdown(joblib.__version__)
-st.markdown(sys.version)
 
 
 def predict(features):

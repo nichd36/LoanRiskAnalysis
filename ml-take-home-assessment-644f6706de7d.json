@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ml-take-home-assessment",
+  "private_key_id": "644f6706de7dd13bad72bbb37d38b084eb673676",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCaMe0A5Q9qbIsp\nNHS72jtqpFtguriCZCc275ItLvj/XLR89rNGlJHoTuvNMbl4Ix6gyOSLt02PRxqe\n2sX2VLpGRW2v+sKWw11xDzlYb8C+xnCPjydLLaJ1C1i+TY8o1znT4AqTDfqlvNFg\n11O6LyfumJAVYTuv3SbgnFNYyPk5G5Il1B6GlRBhgaysINxVGU32ygvwHi270ReD\nKbBEbb4rMtSwWxYyqjQ+uQEDwPU4o1rmhCygd7MMhikrIktz/89yHjkX4lPhohFq\nhOuSS8OHQudlIhsUdmosaEDoa7bdlXJvlLPF5HRHU5JSUA1WweWVC0NjfZyMBL1L\npZQW9+wPAgMBAAECggEAOukRKfLZqWjP4A28/Zo6chtaGAIuhQ6bltb/y4hzNCjo\nggfE5ZXUiuNAHrS9LeOJC5fFDYYaOT/KsV9XG64yPq++4OmWl4ALfqr410tW4ewx\ny/8+3W+RblNH8+jw5YMZAlRJ5fYEyXZyriOGRw9GG9eo0KpF4gJFnLHM/BJIeWLx\nzpmOcePbBVhp9lW668k46BNADHbWCduSMGbzAZNEsJYftCVma6H/920zEMZi1CGy\nYttIexxG0glHqW1b6wAcUZWwOwi43MKkKAo7DJB5VUZyZJBPOthB6LNJnQpBA6Lr\neYOpz3K4GQtyb9OlR2Z6EPFb6JV0zVU9noOeExSf5QKBgQDOUPqpap+drP/189Sd\nuxUqlSEhXzY+c534LfLZL9noYmdWgKLu9FqBl/0iU0l9rOL291qIny/7GwnIcrAG\n81jPXMC6EFs5/yqcJmeIEmXZ90Hzxq8EqOAboJpv9vu73MbKEnXQ217J2AK4ly5R\nOTI2EFnZjJfuHAsiRA7LLH/vlQKBgQC/U8O3ElBx4UeE7iwtvI6uFKd9HPq9/8e5\n8b8DSOHIN9+Dn3l5Cs61KDESElLRK+oJ520go8bWX2Klfeg8kzgj/THsHWSN7hte\ner6AZoqtYUf3tBOv6lj6qWF3b8enJRqiCmzrcSZS+U6Yo/0DafGuKhi/ExQbFR3j\nCAa2xVuUEwKBgGyxrw1YVhU80nDib85VhLY1cQni3nISeVQJ6RpRIm1SgnzJMo3P\ngGssBrlxxZMHZV+VO0YlD6MsQIAxI9nVlKFSjVq5SUaJzwoLFZpTjwNBR6bFsuky\nizci6po4NbFog/ZruVQ6bnrKacyUIVu7VV+0R5HchyJz9c2sq1qQ7CntAoGAVEeM\nzicWIqQPAiJ8eYU3AL3+baGHXoy+qU0xTDwdoTnjjrKAKu600Z4rx38k1hlXFhfI\nvXkHjMUlyiqlU5GySEAvboggFFlP2xWMtzj0W52fuyCrD3HW0kwssBUgSKOSkNCw\n3CHStPg3RAvw10EjAgpvLjQ0Rh3ONYUCmB5l0dsCgYA5cN/AC5es2r09kBrJmAIl\nkV4ccpgKmPFVm7O8nx/5pCSU7zc9pWuP6UrUm8xRbpXYB3PCpQL+8O0GvXFd5Q4q\njP8r+3JlsjqHJ2DoIz/Kk2fA7IyR/0T3ZmGrGDsk4cuobLKcFmNz/MbVonuKW9l3\n7TsCY07UYB3HUUgpbzOpiw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "streamlit@ml-take-home-assessment.iam.gserviceaccount.com",
+  "client_id": "117636444561936424854",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/streamlit%40ml-take-home-assessment.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
